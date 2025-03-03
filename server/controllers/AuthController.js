@@ -42,7 +42,7 @@ const registerUser = async (req, res) => {
         message: "Email already exists"
       });
     }
-    let imageRecord = await cloudinary.uploader.upload(req.file.path);
+    let imageRecord = await cloudinary.uploader.upload(req.file.path); 
     let user = await new userModel({
       name: name,
       email: email,
@@ -60,10 +60,10 @@ const registerUser = async (req, res) => {
       user
     });
   } catch (err) {
-    return res.status(500).send({
-      success: false,
-      message: err
-    });
+      return res.status(500).send({
+        success: false,
+        message: err
+      });
   }
 }
 const dummyApi = async (req, res) => {

@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
 import Header from '../component/header'
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [gender, setGender] = useState('');
   const [city, setCity] = useState('');
-  const [contect, setContect] = useState('');
+  const [contact, setContact] = useState('');
   const [image, setImage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!name || !email || !password || !confirmPassword || !gender || !city || !contect || !image){
+    if (!name || !email || !password || !confirmPassword || !gender || !city || !contact || !image) {
       toast.error('All Fields Are Required');
       return false;
     }
@@ -29,10 +30,8 @@ const Register = () => {
     formdata.append("password", password);
     formdata.append("gender", gender);
     formdata.append("city", city);
-    formdata.append("contect", contect);
+    formdata.append("contact", contact);
     formdata.append("userimage", image);
-    console.log(formdata);
-
     try {
       let res = await fetch(`http://localhost:8080/register`, {
         method: 'POST',
@@ -47,8 +46,11 @@ const Register = () => {
         setConfirmPassword('');
         setGender('');
         setCity('');
-        setContect('');
+        setContact('');
         setImage('');
+        setTimeout(() => {
+          navigate('/');
+        }, 2000);
       } else {
         toast.error(user?.message);
       }
@@ -95,8 +97,8 @@ const Register = () => {
                   <input type="text" onChange={(e) => setCity(e.target.value)} value={city} className="form-control" placeholder='Enter Your City' />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="contect" className="form-label">Contect</label>
-                  <input type="text" onChange={(e) => setContect(e.target.value)} value={contect} className="form-control" placeholder='Enter Your Contect' />
+                  <label htmlFor="contact" className="form-label">contact</label>
+                  <input type="text" onChange={(e) => setContact(e.target.value)} value={contact} className="form-control" placeholder='Enter Your contact' />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="image" className="form-label">Image</label>
