@@ -8,28 +8,35 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [gender, setGender] = useState('');
+  const [city, setCity] = useState('');
+  const [contect, setContect] = useState('');
+  const [image, setImage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(!name || !email || !password || !confirmPassword || !gender || !city || !contect || !image){
+      toast.error('All Fields Are Required');
+      return false;
+    }
+    if (password != confirmPassword) {
+      toast.error('Passwords Are Not Match');
+      return false;
+    }
+    const formdata = new FormData;
+    formdata.append("name", name);
+    formdata.append("email", email);
+    formdata.append("password", password);
+    formdata.append("gender", gender);
+    formdata.append("city", city);
+    formdata.append("contect", contect);
+    formdata.append("userimage", image);
+    console.log(formdata);
+
     try {
-      if (!name || !email || !password || !confirmPassword) {
-        toast.error('All Fields Are Required');
-        return false;
-      }
-      if (password != confirmPassword) {
-        toast.error('Passwords Are Not Match');
-        return false;
-      }
       let res = await fetch(`http://localhost:8080/register`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          password: password
-        })
+        body: formdata
       });
       let user = await res.json();
       if (user.success) {
@@ -38,6 +45,10 @@ const Register = () => {
         setEmail('');
         setPassword('');
         setConfirmPassword('');
+        setGender('');
+        setCity('');
+        setContect('');
+        setImage('');
       } else {
         toast.error(user?.message);
       }
@@ -73,6 +84,23 @@ const Register = () => {
                 <div className="mb-3">
                   <label htmlFor="confirmpassword" className="form-label">Confirm Password</label>
                   <input type="password" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword} className="form-control" placeholder='Confirm Your Password' />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="gender" className="form-label">Gender</label><br />
+                  <input type="radio" onChange={(e) => setGender(e.target.value)} value={'male'} /> Male &nbsp;&nbsp;
+                  <input type="radio" onChange={(e) => setGender(e.target.value)} value={'female'} /> Female
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="city" className="form-label">City</label>
+                  <input type="text" onChange={(e) => setCity(e.target.value)} value={city} className="form-control" placeholder='Enter Your City' />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="contect" className="form-label">Contect</label>
+                  <input type="text" onChange={(e) => setContect(e.target.value)} value={contect} className="form-control" placeholder='Enter Your Contect' />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="image" className="form-label">Image</label>
+                  <input type="file" onChange={(e) => setImage(e.target.files[0])} className="form-control" />
                 </div>
                 <button type="submit" className="btn btn-primary">Register</button>
               </form>
