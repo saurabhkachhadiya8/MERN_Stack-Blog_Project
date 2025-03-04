@@ -5,7 +5,14 @@ import './App.css'
 import Login from './pages/login'
 import Register from './pages/register'
 import PrivateRoute from './Private/PrivateRoute'
-import Admin from './pages/Admin'
+
+import AdminDashboard from './pages/admin/AdminDashboard'
+import Admins from './pages/admin/Admins'
+import AdminManagers from './pages/admin/AdminManagers'
+import AdminUsers from './pages/admin/AdminUsers'
+import AdminViewBlogs from './pages/admin/AdminViewBlogs'
+import AdminProfile from './pages/admin/AdminProfile'
+
 import Manager from './pages/Manager'
 import User from './pages/User'
 
@@ -16,7 +23,12 @@ function App() {
         <Route path='/' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/admin' element={<PrivateRoute allowedRoles={['admin']} />} >
-          <Route path='dashboard' element={<Admin />} />
+          <Route path='dashboard' element={<AdminDashboard />} />
+          <Route path='admins' element={<Admins />} />
+          <Route path='managers' element={<AdminManagers />} />
+          <Route path='users' element={<AdminUsers />} />
+          <Route path='viewblogs' element={<AdminViewBlogs />} />
+          <Route path='profile' element={<AdminProfile />} />
         </Route>
         <Route path='/manager' element={<PrivateRoute allowedRoles={['manager']} />} >
           <Route path='dashboard' element={<Manager />} />

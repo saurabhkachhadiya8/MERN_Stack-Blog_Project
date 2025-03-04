@@ -28,7 +28,7 @@ const Header = () => {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               {!auth?.token ? (
                 <>
                   <li className="nav-item">
@@ -44,10 +44,6 @@ const Header = () => {
                 </li>
               )}
             </ul>
-            <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
           </div>
         </div>
       </nav>

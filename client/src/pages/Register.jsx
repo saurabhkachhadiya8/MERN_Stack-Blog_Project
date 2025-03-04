@@ -40,14 +40,6 @@ const Register = () => {
       let user = await res.json();
       if (user.success) {
         toast.success(user?.message);
-        setName('');
-        setEmail('');
-        setPassword('');
-        setConfirmPassword('');
-        setGender('');
-        setCity('');
-        setContact('');
-        setImage('');
         setTimeout(() => {
           navigate('/');
         }, 2000);
