@@ -1,0 +1,460 @@
+/* blog category  */
+.blogCategory .blogCategorySlider {
+  background-color: #f5f5f5;
+  padding: 10px 70px 10px 0;
+  color: #080808;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+}
+
+.blogCategory .blogCategorySlider .blogCategorySlide {
+  border-right: 1px solid #ccc;
+  user-select: none;
+}
+
+.blogCategory .blogCategorySlider .blogCategorySlide:last-child {
+  border: none;
+}
+
+.blogCategory .blogCategoryBtn {
+  width: 70px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f5f5f5;
+  box-shadow: -20px 0 30px #f5f5f5;
+}
+
+.blogCategory .blogCategoryBtn button {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  text-align: center;
+  background-color: transparent;
+  transform: translateY(35%);
+  transition: all .3s;
+}
+
+.blogCategory .blogCategoryBtn button::after {
+  font-size: 10px;
+  font-weight: 600;
+  color: #080808;
+}
+
+.blogCategory .blogCategoryBtn button:hover {
+  background-color: #d6d6d6;
+}
+
+/* blogs  */
+.blog .card .title,
+.blog .card .category,
+.blog .card .author {
+  width: fit-content;
+  transition: all .3s;
+  position: relative;
+  cursor: pointer;
+}
+
+.blog .card .title:hover,
+.blog .card .category:hover,
+.blog .card .author:hover {
+  color: var(--hover-color) !important;
+}
+
+.blog .card .category::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--hover-color);
+  transition: all .5s;
+}
+
+.blog .card .category:hover::after {
+  width: 100%;
+}
+
+.blog .progress-ring {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+}
+
+.blog .progress-ring svg {
+  width: 100%;
+  height: 100%;
+}
+
+.blog .progress-ring__circle {
+  fill: none;
+  stroke: white;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s linear;
+}
+
+/* blog category with detail */
+.blogCategoryWithDetail .blogCategorySlider .blogCategorySlide .name {
+  cursor: pointer;
+  transition: all .3s;
+  width: fit-content;
+}
+
+.blogCategoryWithDetail .blogCategorySlider .blogCategorySlide .name:hover {
+  color: var(--hover-color);
+}
+
+/* blog slider  */
+.blogSlider .card .title,
+.blogSlider .card .category,
+.blogSlider .card .author {
+  width: fit-content;
+  transition: all .3s;
+  position: relative;
+  cursor: pointer;
+}
+
+.blogSlider .card .title:hover,
+.blogSlider .card .category:hover,
+.blogSlider .card .author:hover {
+  color: var(--hover-color) !important;
+}
+
+.blogSlider .card .category::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--hover-color);
+  transition: all .5s;
+}
+
+.blogSlider .card .category:hover::after {
+  width: 100%;
+}
+
+.blogSlider .swiper-slide {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0.3;
+}
+
+.blogSlider .swiper-slide-active {
+  opacity: 1 !important;
+}
+
+/* Email  */
+.Email .input-group button:hover {
+  background-color: var(--hover-color);
+}
+
+/* all blogs  */
+.allBlogs .card .title,
+.allBlogs .card .category,
+.allBlogs .card .author {
+  width: fit-content;
+  transition: all .3s;
+  position: relative;
+  cursor: pointer;
+}
+
+.allBlogs .card .title:hover,
+.allBlogs .card .category:hover,
+.allBlogs .card .author:hover {
+  color: var(--hover-color) !important;
+}
+
+.allBlogs .card .category::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--hover-color);
+  transition: all .5s;
+}
+
+.allBlogs .card .category:hover::after {
+  width: 100%;
+}
+
+.allBlogs .heading::before,
+.allBlogs .heading::after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  background-color: #c1c1c1;
+}
+
+.allBlogs .heading::before {
+  width: 30%;
+  left: calc(100% + 15px);
+  top: 50%;
+}
+
+.allBlogs .heading::after {
+  width: 55%;
+  left: calc(100% + 15px);
+  top: 75%;
+}
+
+/* footer  */
+footer .heading::before,
+footer .heading::after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  background-color: #c1c1c1;
+}
+
+footer .heading::before {
+  width: 30%;
+  left: calc(100% + 15px);
+  top: 50%;
+}
+
+footer .heading::after {
+  width: 55%;
+  left: calc(100% + 15px);
+  top: 75%;
+}
+
+footer .menu a {
+  color: #6c757d;
+  font-weight: 600;
+  transition: all .3s;
+  width: fit-content;
+}
+
+footer .menu a:hover {
+  color: var(--hover-color) !important;
+}
+
+footer input::placeholder {
+  color: #6c757d !important;
+}
+
+footer .input-group button {
+  background-color: #c1c1c1c9;
+  font-size: 14px;
+  height: fit-content;
+  transition: all .3s;
+}
+
+footer .input-group button:hover {
+  background-color: var(--hover-color);
+  color: #ccc;
+}
+
+/* single blog detail  */
+.singleBlogDetail .home,
+.singleBlogDetail .title,
+.singleBlogDetail .category,
+.singleBlogDetail .author {
+  width: fit-content;
+  transition: all .3s;
+  position: relative;
+  cursor: pointer;
+}
+
+.singleBlogDetail .home:hover,
+.singleBlogDetail .title:hover,
+.singleBlogDetail .category:hover,
+.singleBlogDetail .author:hover {
+  color: var(--hover-color) !important;
+}
+
+.singleBlogDetail .home::after,
+.singleBlogDetail .category::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--hover-color);
+  transition: all .5s;
+}
+
+.singleBlogDetail .home:hover::after,
+.singleBlogDetail .category:hover::after {
+  width: 100%;
+}
+
+/* like dislike box  */
+.LikeDislikeBox .fa-thumbs-up,
+.LikeDislikeBox .fa-thumbs-down {
+  display: none;
+}
+
+.LikeDislikeBox .like:hover span,
+.LikeDislikeBox .dislike:hover span {
+  display: none;
+}
+
+.LikeDislikeBox .like:hover .fa-thumbs-up,
+.LikeDislikeBox .dislike:hover .fa-thumbs-down {
+  display: flex;
+}
+
+/* comment box  */
+.CommentBox .heading span:hover {
+  color: var(--hover-color) !important;
+  border-color: var(--hover-color) !important;
+}
+
+/* category wise blogs  */
+.categoryWiseBlogs .card .title,
+.categoryWiseBlogs .card .author {
+  width: fit-content;
+  transition: all .3s;
+  position: relative;
+  cursor: pointer;
+}
+
+.categoryWiseBlogs .card .title:hover,
+.categoryWiseBlogs .card .author:hover {
+  color: var(--hover-color) !important;
+}
+
+/* author wise blogs  */
+.authorWiseBlogs .card .title,
+.authorWiseBlogs .card .category {
+  width: fit-content;
+  transition: all .3s;
+  position: relative;
+  cursor: pointer;
+}
+
+.authorWiseBlogs .card .title:hover,
+.authorWiseBlogs .card .category:hover {
+  color: var(--hover-color) !important;
+}
+
+.authorWiseBlogs .card .category::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--hover-color);
+  transition: all .5s;
+}
+
+.authorWiseBlogs .card .category:hover::after {
+  width: 100%;
+}
+
+/* user  */
+.user .card .title,
+.user .card .category,
+.user .card .author {
+  width: fit-content;
+  transition: all .3s;
+  position: relative;
+  cursor: pointer;
+}
+
+.user .card .title:hover,
+.user .card .category:hover,
+.user .card .author:hover {
+  color: var(--hover-color) !important;
+}
+
+.user .card .category::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--hover-color);
+  transition: all .5s;
+}
+
+.user .card .category:hover::after {
+  width: 100%;
+}
+
+.user .card:hover .btns {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: rotateX(0deg) !important;
+}
+
+.user .heading span:hover {
+  color: var(--hover-color) !important;
+  border-color: var(--hover-color) !important;
+}
+
+.user .nav-link {
+  color: #6c757d;
+  font-weight: 600;
+}
+
+/* admin  */
+.admin .card .title,
+.admin .card .category,
+.admin .card .author {
+  width: fit-content;
+  transition: all .3s;
+  position: relative;
+  cursor: pointer;
+}
+
+.admin .card .title:hover,
+.admin .card .category:hover,
+.admin .card .author:hover {
+  color: var(--hover-color) !important;
+}
+
+.admin .card .category::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--hover-color);
+  transition: all .5s;
+}
+
+.admin .card .category:hover::after {
+  width: 100%;
+}
+
+.admin .card:hover .btns {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: rotateX(0deg) !important;
+}
+
+.admin .heading span:hover {
+  color: var(--hover-color) !important;
+  border-color: var(--hover-color) !important;
+}
+
+.admin .nav-link {
+  color: #6c757d;
+  font-weight: 600;
+}
+
+/* login  */
+.login .register:hover {
+  color: var(--hover-color) !important;
+  border-color: var(--hover-color) !important;
+}
+
+/* register  */
+.register .login:hover {
+  color: var(--hover-color) !important;
+  border-color: var(--hover-color) !important;
+}
